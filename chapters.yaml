@@ -1,1 +1,410 @@
+book:
+  title: "Вайб-кодинг для ИТ-интегратора"
+  subtitle: "Практический учебник по AI-first разработке: от идеи и прототипа до GitHub, Supabase, Vercel, Claude Code, AI-фич и агентной автоматизации"
+  audience: "Сотрудники КОРУС Консалтинг с нулевым опытом программирования"
+  main_project: "AI Advisory Intake Assistant"
+  language: "ru"
+  style: "Практично, ясно, без канцелярита, для умного новичка"
 
+chapters:
+  - number: 1
+    section: "Картина мира вайб-кодинга"
+    title: "Что такое вайб-кодинг и почему это не разработка без разработки"
+    level: "beginner"
+    purpose: "Дать честную рамку AI-first разработки и ответственности человека"
+    main_question: "За что отвечает AI, а за что всё равно отвечает человек?"
+    tools: ["Lovable", "GitHub", "Claude Code"]
+    artifacts: ["Human / AI / Tool / Reviewer Responsibility Map"]
+    must_cover:
+      - "отличие вайб-кодинга от no-code, low-code и классической разработки"
+      - "цикл prompt → generation → review → test → commit"
+      - "риски слепого доверия AI"
+      - "роль human review"
+    quality_gate: "Читатель может объяснить, что сделал AI, что проверил человек и какие риски остались"
+
+  - number: 2
+    section: "Картина мира вайб-кодинга"
+    title: "Как устроен путь от идеи до приложения"
+    level: "beginner"
+    purpose: "Показать полный маршрут учебника и сквозной проект"
+    main_question: "Какие этапы проходит идея, прежде чем стать работающим web-приложением?"
+    tools: ["Lovable", "GitHub", "Supabase", "Vercel", "Anthropic API", "Claude Code"]
+    artifacts: ["Vibe Coding Learning Journey Map"]
+    must_cover:
+      - "идея продукта"
+      - "product brief"
+      - "прототип"
+      - "код и GitHub"
+      - "данные и Supabase"
+      - "деплой и авторизация"
+      - "AI-фичи и агентная разработка"
+    quality_gate: "Читатель понимает весь маршрут и ожидаемый результат после каждого раздела"
+
+  - number: 3
+    section: "Картина мира вайб-кодинга"
+    title: "Минимальный технический словарь вайбкодера"
+    level: "beginner"
+    purpose: "Снять страх перед базовыми техническими словами"
+    main_question: "Какие термины нужно понимать, чтобы не теряться в AI-разработке?"
+    tools: ["GitHub", "Supabase", "Vercel", "Anthropic API", "Claude Code"]
+    artifacts: ["Глоссарий вайбкодера"]
+    must_cover:
+      - "frontend и backend"
+      - "API"
+      - "database"
+      - "auth"
+      - "Git, commit, branch, pull request"
+      - "deploy, environment, secret"
+      - "agent, tool, hook, prompt"
+    quality_gate: "Читатель может своими словами объяснить ключевые термины и показать их в учебном проекте"
+
+  - number: 4
+    section: "Первый прототип"
+    title: "Формулируем идею продукта для AI-инструмента"
+    level: "beginner"
+    purpose: "Научить превращать сырую идею в нормальную постановку задачи для AI"
+    main_question: "Как описать продукт так, чтобы AI создал не хаос, а полезный первый прототип?"
+    tools: ["Lovable", "ChatGPT", "Claude"]
+    artifacts: ["Product Brief для вайб-кодинга"]
+    must_cover:
+      - "пользователь"
+      - "проблема"
+      - "MVP scope"
+      - "user flow"
+      - "что не входит в первую версию"
+      - "критерии успеха прототипа"
+    quality_gate: "Из product brief можно сразу написать первый промпт для AI-builder"
+
+  - number: 5
+    section: "Первый прототип"
+    title: "Lovable: первый рабочий прототип за одну сессию"
+    level: "beginner"
+    purpose: "Дать быстрый практический результат и показать диалог с AI-builder"
+    main_question: "Как за одну сессию собрать первый прототип и не потерять контроль над задачей?"
+    tools: ["Lovable"]
+    artifacts: ["Первый MVP-прототип", "Prompt Log"]
+    must_cover:
+      - "старт проекта"
+      - "первый промпт"
+      - "итерации"
+      - "журнал промптов"
+      - "проверка пользовательского сценария"
+    quality_gate: "Прототип можно показать коллеге, а основной сценарий проходит от начала до конца"
+
+  - number: 6
+    section: "Первый прототип"
+    title: "Разбор прототипа: что получилось, что сгенерировано, что опасно"
+    level: "beginner"
+    purpose: "Научить смотреть на прототип как на систему с рисками"
+    main_question: "Как понять, что прототип действительно работает, а не просто красиво выглядит?"
+    tools: ["Lovable", "ChatGPT", "Claude"]
+    artifacts: ["Prototype Audit Checklist"]
+    must_cover:
+      - "проверка экранов"
+      - "проверка пользовательского сценария"
+      - "заглушки против реальной логики"
+      - "ограничения демо"
+      - "что нельзя показывать как готовый продукт"
+    quality_gate: "По прототипу есть список исправлений, ограничений и решений для следующего этапа"
+
+  - number: 7
+    section: "Код под контролем"
+    title: "GitHub, репозиторий, commit: как сохранять работу правильно"
+    level: "beginner"
+    purpose: "Научить сохранять код и историю изменений"
+    main_question: "Как сделать так, чтобы результат AI-разработки не потерялся и был понятен другим?"
+    tools: ["GitHub"]
+    artifacts: ["README template", "Commit Policy"]
+    must_cover:
+      - "репозиторий"
+      - "commit"
+      - "README"
+      - "что не коммитить"
+      - "осмысленные сообщения коммитов"
+    quality_gate: "Проект открыт в GitHub, README понятен, изменения сохранены осмысленными commit messages"
+
+  - number: 8
+    section: "Код под контролем"
+    title: "Ветки и pull request: безопасные эксперименты с AI-кодом"
+    level: "beginner"
+    purpose: "Дать безопасный способ пробовать изменения, не ломая основную версию"
+    main_question: "Как экспериментировать с AI-generated code и иметь возможность откатиться?"
+    tools: ["GitHub"]
+    artifacts: ["Simple Branching Model", "Pull Request Checklist"]
+    must_cover:
+      - "main branch"
+      - "feature branch"
+      - "pull request"
+      - "review"
+      - "merge"
+      - "rollback mindset"
+    quality_gate: "Каждый значимый эксперимент идёт через ветку и pull request"
+
+  - number: 9
+    section: "Код под контролем"
+    title: "GitHub Pages и первый публичный результат"
+    level: "beginner"
+    purpose: "Показать первый простой способ публикации результата"
+    main_question: "Как превратить проект в публичную страницу?"
+    tools: ["GitHub Pages"]
+    artifacts: ["Первая публичная ссылка", "Release Note"]
+    must_cover:
+      - "что можно публиковать на GitHub Pages"
+      - "ограничения статического сайта"
+      - "публичная ссылка"
+      - "release note"
+      - "что нельзя публиковать"
+    quality_gate: "Опубликована только безопасная версия, ссылка работает, ограничения понятны"
+
+  - number: 10
+    section: "Данные и backend"
+    title: "Модель данных: таблицы, связи и бизнес-сущности"
+    level: "intermediate"
+    purpose: "Научить проектировать данные до создания таблиц"
+    main_question: "Какие данные нужны приложению и как они связаны?"
+    tools: ["Supabase", "dbdiagram.io", "ChatGPT", "Claude"]
+    artifacts: ["ERD-lite Data Model"]
+    must_cover:
+      - "бизнес-сущности"
+      - "таблицы и поля"
+      - "связи между таблицами"
+      - "справочники и статусы"
+      - "типовые ошибки моделирования"
+    quality_gate: "Модель данных объясняет все ключевые функции приложения"
+
+  - number: 11
+    section: "Данные и backend"
+    title: "Supabase: PostgreSQL, таблицы, seed data и realtime"
+    level: "intermediate"
+    purpose: "Подключить живую базу данных к учебному приложению"
+    main_question: "Как перейти от прототипа с заглушками к приложению с настоящими данными?"
+    tools: ["Supabase", "PostgreSQL"]
+    artifacts: ["Supabase Project", "Seed Dataset"]
+    must_cover:
+      - "создание проекта Supabase"
+      - "таблицы"
+      - "seed data"
+      - "подключение приложения"
+      - "realtime-сценарий"
+    quality_gate: "Приложение читает и записывает данные в Supabase, тестовые записи понятны и безопасны"
+
+  - number: 12
+    section: "Данные и backend"
+    title: "RLS и права доступа: минимум безопасности для новичка"
+    level: "intermediate"
+    purpose: "Дать базовое понимание авторизации на уровне данных"
+    main_question: "Кто имеет право видеть и изменять какие строки данных?"
+    tools: ["Supabase", "PostgreSQL"]
+    artifacts: ["RLS Policy Checklist", "Access Test Cases"]
+    must_cover:
+      - "Row Level Security"
+      - "роли пользователей"
+      - "политики чтения и записи"
+      - "тестовые пользователи"
+      - "негативные тесты доступа"
+    quality_gate: "Тестовый пользователь не может прочитать или изменить чужие данные"
+
+  - number: 13
+    section: "Деплой, авторизация и production mindset"
+    title: "Vercel: деплой приложения из GitHub"
+    level: "intermediate"
+    purpose: "Научить публиковать приложение через нормальный deployment flow"
+    main_question: "Как доставить приложение из репозитория в работающую web-среду?"
+    tools: ["Vercel", "GitHub"]
+    artifacts: ["Production Deployment Checklist"]
+    must_cover:
+      - "подключение GitHub"
+      - "preview deployment"
+      - "production deployment"
+      - "логи сборки"
+      - "ошибки деплоя"
+    quality_gate: "Приложение доступно по ссылке, сборка повторяема, ошибки деплоя документированы"
+
+  - number: 14
+    section: "Деплой, авторизация и production mindset"
+    title: "Auth: вход по email и Google OAuth"
+    level: "intermediate"
+    purpose: "Добавить пользовательский вход и базовую идентификацию"
+    main_question: "Как понять, кто вошёл в приложение, и связать пользователя с его данными?"
+    tools: ["Supabase Auth", "Google OAuth", "Vercel"]
+    artifacts: ["Auth Flow Diagram", "Login/Logout Test Cases"]
+    must_cover:
+      - "authentication"
+      - "email login"
+      - "Google OAuth"
+      - "redirect URLs"
+      - "session"
+      - "logout"
+    quality_gate: "Пользователь может войти, выйти, а его данные корректно связаны с аккаунтом"
+
+  - number: 15
+    section: "Деплой, авторизация и production mindset"
+    title: "Secrets, environments и базовая защита демо"
+    level: "intermediate"
+    purpose: "Научить обращаться с ключами, настройками и окружениями"
+    main_question: "Что нельзя хранить в коде и как безопасно настроить приложение?"
+    tools: ["Vercel", "GitHub", "Supabase"]
+    artifacts: ["Environment Variables Register", "Do Not Commit Checklist"]
+    must_cover:
+      - "environment variables"
+      - "secrets"
+      - "public и private keys"
+      - "local, preview, production"
+      - "что нельзя коммитить"
+    quality_gate: "Реальные секреты не лежат в коде, переменные описаны, окружения разделены"
+
+  - number: 16
+    section: "Альтернативные AI-стеки и UI-генерация"
+    title: "v0 by Vercel: генерация интерфейсов и компонентов"
+    level: "intermediate"
+    purpose: "Показать UI-first подход к AI-разработке"
+    main_question: "Когда лучше генерировать интерфейс отдельно, а не весь продукт целиком?"
+    tools: ["v0 by Vercel"]
+    artifacts: ["UI Prompt Pack", "Component Library Draft"]
+    must_cover:
+      - "UI prompt"
+      - "компоненты"
+      - "формы"
+      - "dashboard"
+      - "итерации дизайна"
+      - "ограничения UI-first подхода"
+    quality_gate: "Созданные компоненты можно использовать в учебном продукте"
+
+  - number: 17
+    section: "Альтернативные AI-стеки и UI-генерация"
+    title: "Bolt.new: второй AI-стек для full-stack экспериментов"
+    level: "intermediate"
+    purpose: "Сравнить альтернативный AI-builder с Lovable"
+    main_question: "Как понять, какой AI-builder лучше подходит под конкретную задачу?"
+    tools: ["Bolt.new", "Lovable"]
+    artifacts: ["Lovable vs Bolt.new Comparison Matrix"]
+    must_cover:
+      - "создание мини-проекта"
+      - "prompt-to-app workflow"
+      - "сравнение скорости"
+      - "сравнение контроля"
+      - "сравнение качества результата"
+    quality_gate: "Читатель может объяснить, в каких задачах какой инструмент выбрать"
+
+  - number: 18
+    section: "Альтернативные AI-стеки и UI-генерация"
+    title: "Как выбирать AI-инструмент под задачу"
+    level: "intermediate"
+    purpose: "Собрать decision framework для выбора инструментов"
+    main_question: "Какой инструмент использовать для идеи, UI, full-stack прототипа, кода, AI-фичи или агентного workflow?"
+    tools: ["Lovable", "v0", "Bolt.new", "Claude Code", "Anthropic API"]
+    artifacts: ["AI Tool Decision Tree"]
+    must_cover:
+      - "классы AI-инструментов"
+      - "prompt-to-app builders"
+      - "UI generators"
+      - "coding agents"
+      - "API-level AI"
+      - "критерии выбора"
+    quality_gate: "Читатель может обосновать выбор инструмента под конкретный сценарий"
+
+  - number: 19
+    section: "AI-фичи внутри продукта"
+    title: "Проектируем AI-фичу: use case, границы, данные, риск"
+    level: "advanced"
+    purpose: "Научить проектировать AI-фичу как продуктовую функцию"
+    main_question: "Какую реальную задачу решает AI внутри приложения?"
+    tools: ["Anthropic API", "ChatGPT", "Claude"]
+    artifacts: ["AI Feature Canvas"]
+    must_cover:
+      - "AI use case"
+      - "входные данные"
+      - "ожидаемый результат"
+      - "границы ответа"
+      - "hallucination risk"
+      - "data leakage risk"
+    quality_gate: "AI-фича имеет чёткий use case, входы, выходы, ограничения и критерии качества"
+
+  - number: 20
+    section: "AI-фичи внутри продукта"
+    title: "Anthropic API: запросы, structured outputs и JSON-контракты"
+    level: "advanced"
+    purpose: "Показать, как приложение вызывает LLM через API и получает структурированный результат"
+    main_question: "Как сделать AI-ответ пригодным для приложения, а не просто текстом?"
+    tools: ["Anthropic API", "JSON Schema"]
+    artifacts: ["Working API Example", "JSON Schema"]
+    must_cover:
+      - "API request"
+      - "system и user instructions"
+      - "structured outputs"
+      - "JSON schema"
+      - "обработка ошибок"
+      - "проверка результата"
+    quality_gate: "Приложение получает структурированный AI-ответ и корректно обрабатывает ошибочные случаи"
+
+  - number: 21
+    section: "AI-фичи внутри продукта"
+    title: "Кеширование, стоимость, rate limits и тестирование AI-фич"
+    level: "advanced"
+    purpose: "Показать эксплуатационную сторону AI-фич"
+    main_question: "Как сделать AI-функцию управляемой по стоимости, скорости и надёжности?"
+    tools: ["Anthropic API", "Vercel", "Supabase"]
+    artifacts: ["AI Cost & Reliability Checklist"]
+    must_cover:
+      - "стоимость AI-вызовов"
+      - "prompt caching"
+      - "rate limits"
+      - "retry"
+      - "fallback"
+      - "evals"
+      - "логирование"
+    quality_gate: "Есть тесты AI-фичи, понятны расходы, ошибки и fallback-сценарии"
+
+  - number: 22
+    section: "Агентная разработка и Demo Day"
+    title: "Claude Code: агентная разработка через CLAUDE.md, Skills, subagents и hooks"
+    level: "advanced"
+    purpose: "Научить использовать Claude Code как управляемого инженерного помощника"
+    main_question: "Как дать агенту контекст проекта и правила работы, не теряя контроль?"
+    tools: ["Claude Code"]
+    artifacts: ["CLAUDE.md", "Agent Rules Pack"]
+    must_cover:
+      - "coding agent"
+      - "CLAUDE.md"
+      - "Skills"
+      - "subagents"
+      - "hooks"
+      - "permissions"
+      - "agent operating rules"
+    quality_gate: "Агент работает по правилам проекта, а человек понимает и утверждает изменения"
+
+  - number: 23
+    section: "Агентная разработка и Demo Day"
+    title: "OpenClaw и агентные сценарии: аудит, тесты, рефакторинг"
+    level: "advanced"
+    purpose: "Показать продвинутые агентные сценарии и их ограничения"
+    main_question: "Как использовать агентов для аудита и улучшения продукта, не превращая их в неконтролируемую силу?"
+    tools: ["OpenClaw", "Claude Code"]
+    artifacts: ["Agent Workflow Map", "Human Approval Checklist"]
+    must_cover:
+      - "агентный gateway"
+      - "audit"
+      - "tests"
+      - "refactoring"
+      - "human approval points"
+      - "trust boundary"
+      - "логи действий"
+    quality_gate: "Любой агентный сценарий имеет границы, права, журнал действий и точки ручного подтверждения"
+
+  - number: 24
+    section: "Агентная разработка и Demo Day"
+    title: "Demo Day: защита продукта, разбор ошибок и план роста"
+    level: "advanced"
+    purpose: "Собрать финальное демо и превратить учебный проект в осознанный результат обучения"
+    main_question: "Как показать продукт так, чтобы было видно не только что он работает, но и что автор понимает его устройство?"
+    tools: ["GitHub", "Vercel", "Supabase", "Anthropic API", "Claude Code"]
+    artifacts: ["Demo Script", "Final Readiness Assessment", "Personal Learning Roadmap"]
+    must_cover:
+      - "demo script"
+      - "архитектура в 1 слайд"
+      - "что работает"
+      - "что не работает"
+      - "technical debt"
+      - "риски"
+      - "план роста"
+    quality_gate: "Участник может показать продукт, объяснить архитектуру, назвать риски и сформулировать план развития"
